@@ -836,28 +836,33 @@ body {
   color:#2a2a2a; margin-bottom:14px;
 }
 .gtm-headline span { color:#f97316; }
+.gtm-insight {
+  font-size:13px; color:#999; font-style:italic;
+  margin-bottom:16px; line-height:1.5;
+}
 .gtm-grid {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap:12px;
 }
 .gtm-card {
   background:white; border-radius:12px;
-  padding:18px 22px;
+  padding:18px 16px;
   border-top:3px solid #f97316;
 }
 .gtm-card.teal { border-top-color:#0f766e; }
+.gtm-card-icon { font-size:26px; margin-bottom:10px; display:block; }
 .gtm-phase {
   font-size:10px; font-weight:700;
-  letter-spacing:0.12em; text-transform:uppercase;
-  color:#f97316; margin-bottom:4px;
+  letter-spacing:0.10em; text-transform:uppercase;
+  color:#f97316; margin-bottom:5px;
 }
 .gtm-phase.teal { color:#0f766e; }
 .gtm-card-title {
-  font-size:15px; font-weight:700;
-  color:#2a2a2a; margin-bottom:5px;
+  font-size:14px; font-weight:700;
+  color:#2a2a2a; margin-bottom:6px; line-height:1.3;
 }
-.gtm-card-desc { font-size:13px; color:#666; line-height:1.5; }
+.gtm-card-desc { font-size:12px; color:#777; line-height:1.55; }
 
 /* ─── SLIDE 11 — TRACTION ─── */
 .traction-content {
@@ -951,10 +956,10 @@ body {
   font-size:15px; color:#888; margin-bottom:22px;
   line-height:1.5;
 }
-.vision-row { display:flex; gap:14px; margin-bottom:20px; }
+.vision-row { display:flex; gap:20px; margin-bottom:20px; max-width:860px; }
 .vision-card {
   flex:1; background:white;
-  border-radius:14px; padding:22px;
+  border-radius:14px; padding:28px;
   position:relative; overflow:hidden;
 }
 .vision-card.active { border:2px solid #f97316; }
@@ -965,13 +970,13 @@ body {
   color:#bbb; margin-bottom:8px;
 }
 .vision-card.active .vision-stage { color:#f97316; }
-.vision-card-icon { font-size:34px; margin-bottom:10px; }
+.vision-card-icon { font-size:42px; margin-bottom:14px; }
 .vision-card-title {
-  font-size:18px; font-weight:800;
-  color:#2a2a2a; margin-bottom:7px;
+  font-size:22px; font-weight:800;
+  color:#2a2a2a; margin-bottom:10px;
 }
 .vision-card-desc {
-  font-size:13px; color:#777; line-height:1.55;
+  font-size:14px; color:#777; line-height:1.6;
 }
 .vision-card-tag {
   position:absolute; top:16px; right:16px;
@@ -1744,8 +1749,8 @@ body {
         <div class="market-num">$50M</div>
         <div>
           <div class="market-label-small">Serviceable Obtainable Market · Initial beachhead</div>
-          <div class="market-name">B2B SaaS — AI Interface Layer</div>
-          <div class="market-sub">1,000 product teams adding AI today. Each one needs the interface layer. This is the launchpad — then enterprise, mobile, and the full platform.</div>
+          <div class="market-name">B2B SaaS &amp; AI-Native Builders</div>
+          <div class="market-sub">Series A–C product teams adding AI without a dedicated platform team · Series C+ engineers blocked by internal AI politics · AI-native builders on Cursor, Claude Code &amp; Lovable building from scratch. Three segments. One interface gap.</div>
         </div>
       </div>
     </div>
@@ -1862,28 +1867,33 @@ body {
   <div class="snum">10 ▪▪▪</div>
   <div class="rule"></div>
   <div class="gtm-content">
-    <div class="pill" style="margin-bottom:12px;">Go-To-Market Strategy</div>
-    <div class="gtm-headline">"Be the <span>default answer</span> when developers want to embed AI in their apps."</div>
+    <div class="pill" style="margin-bottom:10px;">Go-To-Market Strategy</div>
+    <div class="gtm-headline">Be the <span>default answer</span> when developers ask how to add AI for their users.</div>
+    <div class="gtm-insight">Developers are still focused on AI backends. End-user AI interaction is the blind spot — we educate the market and get there first.</div>
     <div class="gtm-grid">
       <div class="gtm-card">
-        <div class="gtm-phase">Phase 1 — Now · High-velocity top of funnel</div>
-        <div class="gtm-card-title">🧑‍💻 Builder Communities</div>
-        <div class="gtm-card-desc"><strong>The entry point:</strong> Pre-built templates on Lovable, Bolt.new, and Replit. LangChain Discord + r/boltnewbuilders as launch channels. 10K+ builders who need exactly this — and don't know it exists yet.</div>
+        <div class="gtm-card-icon">📣</div>
+        <div class="gtm-phase">Content · Category creation</div>
+        <div class="gtm-card-title">Own "Agentic Interfaces"</div>
+        <div class="gtm-card-desc">Name the category before anyone else does. HN, LinkedIn, dev Twitter — educate the market before they know to look.</div>
       </div>
       <div class="gtm-card">
-        <div class="gtm-phase">Phase 1 — Now · Zero-touch installs</div>
-        <div class="gtm-card-title">🤖 AI Coding Tools</div>
-        <div class="gtm-card-desc"><strong>The amplifier:</strong> When a developer asks Cursor or Claude Code "add AI to my app," FluidWeb is the answer. Cursor Rules files + MCP server integration make it the default suggestion — no discovery friction.</div>
+        <div class="gtm-card-icon">🤖</div>
+        <div class="gtm-phase">AI coding tools · Zero-touch</div>
+        <div class="gtm-card-title">Native in Cursor &amp; Claude Code</div>
+        <div class="gtm-card-desc">"How do I add AI for my users?" → FluidWeb. MCP server + Cursor Rules = the default at moment of highest intent.</div>
+      </div>
+      <div class="gtm-card">
+        <div class="gtm-card-icon">🧑‍💻</div>
+        <div class="gtm-phase">Community · Builder flywheel</div>
+        <div class="gtm-card-title">Starter Templates &amp; Community</div>
+        <div class="gtm-card-desc">FluidApp starters on Bolt.new + Claude Code. AI-native builders hit the gap first — they become the founding community.</div>
       </div>
       <div class="gtm-card teal">
-        <div class="gtm-phase teal">Phase 2 — Launch · Impossible to miss</div>
-        <div class="gtm-card-title">🔗 Ecosystem Integration</div>
-        <div class="gtm-card-desc"><strong>The distribution:</strong> Vercel templates, Supabase starters, shadcn/ui components. Coordinated OSS drop: GitHub + Show HN + Product Hunt. At every touchpoint in a developer's stack, FluidWeb is already there.</div>
-      </div>
-      <div class="gtm-card teal">
-        <div class="gtm-phase teal">Phase 2–3 · Own the conversation</div>
-        <div class="gtm-card-title">📣 DevRel, GEO &amp; Community</div>
-        <div class="gtm-card-desc"><strong>The moat:</strong> GEO-optimized docs so FluidWeb appears in AI-generated developer answers. Discord showcase gallery drives UGC. Developers trust developers — community becomes the enterprise sales channel.</div>
+        <div class="gtm-card-icon">🏢</div>
+        <div class="gtm-phase teal">Direct outreach · Parallel track</div>
+        <div class="gtm-card-title">Series A–C SaaS Outreach</div>
+        <div class="gtm-card-desc">Teams under AI pressure with no resources to build in-house. Founder-led LinkedIn → call → design partner.</div>
       </div>
     </div>
   </div>
@@ -1999,12 +2009,6 @@ body {
         <div class="vision-card-icon">📱</div>
         <div class="vision-card-title">FluidWeb Mobile</div>
         <div class="vision-card-desc">Same SDK, native components for iOS and Android. Same product teams — same problems, same solution, bigger surface area.</div>
-      </div>
-      <div class="vision-card future">
-        <div class="vision-stage">Stage 3 — Platform</div>
-        <div class="vision-card-icon">⚡</div>
-        <div class="vision-card-title">Agentic OS Layer</div>
-        <div class="vision-card-desc">As apps go AI-native, FluidWeb becomes the universal interaction layer — the UI primitive for every multi-agent workflow, on every platform.</div>
       </div>
     </div>
     <div class="vision-bottom">FluidWeb = the <span>React</span> of the AI-native era.</div>
