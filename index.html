@@ -1546,6 +1546,31 @@ body {
               <div class="form-field-ai" id="s5-ai-tag2" style="display:none;">✦ AI</div>
             </div>
           </div>
+          <!-- Extracted fields (shown after PDF upload) -->
+          <div id="s5-extracted-fields" style="display:none;">
+            <div class="s5-field-group">
+              <div class="form-field-label">Tax ID</div>
+              <div class="form-field" style="min-height:22px;">
+                <span id="s5-field-taxid" class="s5-typing-text"></span>
+                <div class="form-field-ai" id="s5-ai-tag3" style="display:none;">✦ AI</div>
+              </div>
+            </div>
+            <div class="s5-field-group">
+              <div class="form-field-label">Business Address</div>
+              <div class="form-field" style="min-height:22px;">
+                <span id="s5-field-address" class="s5-typing-text"></span>
+                <div class="form-field-ai" id="s5-ai-tag4" style="display:none;">✦ AI</div>
+              </div>
+            </div>
+            <div class="s5-field-group">
+              <div class="form-field-label">Payment Terms</div>
+              <div class="form-field" style="min-height:22px;">
+                <span id="s5-field-terms" class="s5-typing-text"></span>
+                <div class="form-field-ai" id="s5-ai-tag5" style="display:none;">✦ AI</div>
+              </div>
+            </div>
+          </div>
+
           <!-- File upload row -->
           <div class="s5-upload-row">
             <div id="s5-upload-idle" style="display:flex;align-items:center;gap:6px;width:100%;">
@@ -2045,6 +2070,16 @@ function s5ResetForm() {
   if(idle) idle.style.display = 'flex';
   if(prog) prog.style.display = 'none';
   if(done) done.style.display = 'none';
+  var ef = document.getElementById('s5-extracted-fields');
+  if(ef) ef.style.display = 'none';
+  var taxid = document.getElementById('s5-field-taxid');
+  var address = document.getElementById('s5-field-address');
+  var terms = document.getElementById('s5-field-terms');
+  if(taxid) taxid.textContent = '';
+  if(address) address.textContent = '';
+  if(terms) terms.textContent = '';
+  var t3=document.getElementById('s5-ai-tag3'), t4=document.getElementById('s5-ai-tag4'), t5=document.getElementById('s5-ai-tag5');
+  if(t3) t3.style.display='none'; if(t4) t4.style.display='none'; if(t5) t5.style.display='none';
   s5SetProgress('company',''); s5SetProgress('category',''); s5SetProgress('doc','');
 }
 function s5Animate() {
@@ -2089,9 +2124,33 @@ function s5Animate() {
     var done = document.getElementById('s5-upload-done');
     if(prog) prog.style.display = 'none';
     if(done) done.style.display = 'flex';
+    // Show extracted fields container
+    var ef = document.getElementById('s5-extracted-fields');
+    if(ef) ef.style.display = 'block';
   });
-  // Loop at 9s
-  s5After(9000, function() { s5Animate(); });
+  // Type extracted field 1: Tax ID at 7.5s
+  s5After(7500, function() {
+    s5TypeField('s5-field-taxid', '47-2891034', function() {
+      var t3 = document.getElementById('s5-ai-tag3');
+      if(t3) t3.style.display = 'block';
+    });
+  });
+  // Type extracted field 2: Address at 8.4s
+  s5After(8400, function() {
+    s5TypeField('s5-field-address', 'Austin, TX 78701', function() {
+      var t4 = document.getElementById('s5-ai-tag4');
+      if(t4) t4.style.display = 'block';
+    });
+  });
+  // Type extracted field 3: Payment Terms at 9.3s
+  s5After(9300, function() {
+    s5TypeField('s5-field-terms', 'Net 30', function() {
+      var t5 = document.getElementById('s5-ai-tag5');
+      if(t5) t5.style.display = 'block';
+    });
+  });
+  // Loop at 13s
+  s5After(13000, function() { s5Animate(); });
 }
 s5Animate();
 
